@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado - Optimización Fotográfica</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #eaeaea;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      background: #111;
+      color: #d4af37;
+      padding: 20px 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+
+    .image-box {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      width: 400px;
+      max-width: 90%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .label {
+      background: #111;
+      color: #d4af37;
+      padding: 12px 0;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-top: 1px solid #222;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #d4af37, #b58e2a);
+      color: #111;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(135deg, #e8c547, #d4af37);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #111;
+      color: #b3b3b3;
+      padding: 15px;
+      font-size: 14px;
+      border-top: 1px solid #222;
+    }
+
+    .creators {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #d4af37;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Comparación Antes y Después</header>
+
+  <div class="container">
+    <div class="image-box">
+      <img src="{{ url_for('static', filename=antes) }}" alt="Antes">
+      <div class="label">Antes</div>
+    </div>
+    <div class="image-box">
+      <img src="{{ url_for('static', filename=despues) }}" alt="Después">
+      <div class="label">Después</div>
+    </div>
+  </div>
+
+  <a class="back-btn" href="{{ url_for('index') }}">⬅ Volver al inicio</a>
+
+  <div class="creators">
+    Creadores: Ruth González, Josias Acosta, Cecilia Viveros, Naomi Aveiro, Vania Pico.
+  </div>
+
+  <footer>
+    © 2025 Optimización Fotográfica con IA — Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
